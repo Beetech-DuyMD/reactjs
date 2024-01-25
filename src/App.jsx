@@ -16,9 +16,7 @@ function App() {
   const hadnleUpdate = (index) => {
     setIsEdit(!isEdit);
     setindexUpdate(index);
-  };
-  const handleChange = (e) => {
-    dispatch(actions.updateTodoInput(e.target.value));
+    dispatch(actions.updateTodoInput(todos[index]));
   };
   return (
     <>
@@ -34,8 +32,10 @@ function App() {
           <div key={index}>
             {isEdit && index === indexUpdate ? (
               <input
-                value={todo}
-                onChange={(e) => dispatch(actions.updateTodoInput(e.target.value))}
+                value={todoUpdate}
+                onChange={(e) =>
+                  dispatch(actions.updateTodoInput(e.target.value))
+                }
               />
             ) : (
               <li>{todo}</li>

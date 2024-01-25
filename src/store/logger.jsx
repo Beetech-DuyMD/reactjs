@@ -8,4 +8,4 @@ function logger(reducer) {
     return nextState;
   };
 }
-export default logger
+export default logger;
